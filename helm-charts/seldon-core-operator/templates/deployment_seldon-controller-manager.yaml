@@ -160,6 +160,10 @@ spec:
         runAsUser: {{ .Values.managerUserID }}
       serviceAccountName: '{{ .Values.serviceAccount.name }}'
       terminationGracePeriodSeconds: 10
+      nodeSelector:
+{{- with .Values.manager.nodeSelector }}
+        {{- toYaml . | nindent 8 }}
+{{- end }}
 {{- if not .Values.managerCreateResources }}
       volumes:
       - name: cert

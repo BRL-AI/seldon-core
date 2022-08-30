@@ -85,6 +85,7 @@ manager:
   annotations: {}
   containerSecurityContext: {}
   deploymentNameAsPrefix: false
+  nodeSelector: {}
 rbac:
   configmap:
     create: true
